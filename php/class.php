@@ -53,6 +53,67 @@
 				echo "true";
 			}
 		}
+		public function searchCustomer($id)
+		{
+			$mySql = new MySQL();
+			$db = $mySql->dbConnect();
+			$result = $db->query("select id,username,phonenumber,email from customer where id='".$id."';");
+			if (!$result) {
+				echo "false";
+				return false;
+			}else{
+				if ($result->num_rows == 0) {
+					echo "falseA";
+					return false;
+				}
+				$result = $mySql->resultToArray($result);
+				return $result;
+			}
+		}
+		public function searchCompany($id)
+		{
+			$mySql = new MySQL();
+			$db = $mySql->dbConnect();
+			$result = $db->query("select id,company,phonenumber,email from company where id='".$id."';");
+			if (!$result) {
+				echo "false";
+				return false;
+			}else{
+				if ($result->num_rows == 0) {
+					echo "falseA";
+					return false;
+				}
+				$result = $mySql->resultToArray($result);
+				return $result;
+			}
+		}
+		public function deleteCustomer($id)
+		{
+			$mySql = new MySQL();
+			$db = $mySql->dbConnect();
+			$result = $db->query("delete from customer where id='".$id."';");
+			if (!$result) {
+				echo "false";
+				return false;
+			}else{
+				echo "true";
+				return true;
+			}
+		}
+		public function deleteCompany($id)
+		{
+			$mySql = new MySQL();
+			$db = $mySql->dbConnect();
+			$result = $db->query("delete from company where id='".$id."';");
+			if (!$result) {
+				echo "false";
+				return false;
+			}else{
+				echo "true";
+				return true;
+			}
+		}
+		
 	}
 	/**
 	* class MySQL
