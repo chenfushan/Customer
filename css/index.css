@@ -1,0 +1,47 @@
+div#page {
+	width: 600px;
+	height: 350px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 200px;
+	padding-top: 20px;
+	background-color: rgb(92,167,186);
+}
+div#head{
+	margin-left: 20px;
+	font-size: 20px;
+}
+div#head a{
+	color: black;
+}
+div#foot{
+	margin-left: 200px;
+}
+div#foot table{
+	width: 550px;
+	margin-left: -180px;
+	margin-top: 20px;
+}
+tr.title{
+	border: 1px;
+}
+form{
+	width: 200px;
+	margin-left: 200px;
+}
+form#formCus{
+	margin-top: 50px;
+}
+form input{
+	width: 190px;
+	height: 27px;
+	margin-top: 10px;
+	border: 0;
+}
+div.menu{
+	margin-left: 100px;
+}
+ul li{
+	list-style: none;
+	margin-top: 15px;
+}

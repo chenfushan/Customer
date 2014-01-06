@@ -16,7 +16,7 @@ $(document).ready(function() {
 		xmlhttp.onreadystatechange = function() {
 			if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
 				var Info = xmlhttp.responseText;
-				if (Info == "false") {
+				if (Info != "false") {
 					$("#foot").html("Successfully");
 					document.forms[0].reset();
 				}else{

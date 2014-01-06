@@ -5,18 +5,20 @@
 	<title>manage customer</title>
 	<script src="./js/jquery.js"></script>
 	<script src="./js/manage.js"></script>
+	<link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
 	<div id="page">
-	<div id="head"></div>
-	<div id="body">
-		<form>
-			<input type="text" id="id" placeholder="Username ID" required>
-			<input type="button" value="Search Customer" id="customer">
-			<input type="button" value="Search Company" id="company">
-		</form>
-<!-- 		<a href="javascript:;" onclick="javascript:test(1)">test</a> -->
-	</div>
+		<div id="head">
+			<a href="./index.html"><span>CUSTOMER MANAGEMENT</span></a>
+		</div>
+		<div id="body">
+			<form id="manageCus">
+				<input type="text" id="id" placeholder="Username ID" required>
+				<input type="button" value="Search Customer" id="customer">
+				<input type="button" value="Search Company" id="company">
+			</form>
+		</div>
 		<div id="foot">
 			<table>
 				<tr id="title" class="title">
