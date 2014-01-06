@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	$('.title').hide();
 	$('#customer').click(function() {
+		$('.title').hide();
 		var id = $('#id').val();
 
 		var xmlhttp;
@@ -20,6 +21,7 @@ $(document).ready(function() {
 				if (Info != "false" && Info != "falseA") {
 					$('#title').show();
 					var customer = eval("("+Info+")");
+//					alert(customer[0].id);
 					var innerCode;
 					for (var key in customer) {
 						var value = customer[key];
@@ -29,7 +31,7 @@ $(document).ready(function() {
 					$('#info').html(innerCode);
 				}else{
 					if (Info == "falseA") {
-						$('#foot').html("No one's id is "+id);
+						$('#info').html("No one's id is "+id);
 					}else{
 						alert(Info);
 					}
@@ -39,6 +41,7 @@ $(document).ready(function() {
 		xmlhttp.send(url);
 	});
 	$('#company').click(function() {
+		$('.title').hide();
 		var id = $('#id').val();
 
 		var xmlhttp;
@@ -66,7 +69,7 @@ $(document).ready(function() {
 					$('#info').html(innerCode);
 				}else{
 					if (Info == "falseA") {
-						$('#foot').html("No company's id is "+id);
+						$('#info').html("No company's id is "+id);
 					}else{
 						alert(Info);
 					}
@@ -134,3 +137,5 @@ function delete_com (id) {
 	}
 	xmlhttp.send(url);
 }
+
+

@@ -113,6 +113,36 @@
 				return true;
 			}
 		}
+		public function searchContact($name)
+		{
+			$mySql = new MySQL();
+			$db = $mySql->dbConnect();
+			$result = $db->query("select id, contactId, username, phonenumber, email, officephone, position from contacts where username like '%".$name."%';");
+			if (!$result) {
+				echo "false";
+				return false;
+			}else{
+				if ($result->num_rows == 0) {
+					echo "falseA";
+					return false;
+				}
+				$result = $mySql->resultToArray($result);
+				return $result;
+			}
+		}
+		public function deleteContact($contactId)
+		{
+			$mySql = new MySQL();
+			$db = $mySql->dbConnect();
+			$result = $db->query("delete from contacts where contactId='".$contactId."';");
+			if (!$result) {
+				echo "false";
+				return false;
+			}else{
+				echo "true";
+				return true;
+			}
+		}
 		
 	}
 	/**
